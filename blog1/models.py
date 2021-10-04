@@ -7,4 +7,6 @@ class Post(models.Model):
     title = models.CharField(max_length=255) #cria campos varchar(TITLO DE POSTAGEM)
     slug = models.SlugField(max_length=255, unique=True) #www.meusite.com/blog/introdução
     author = models.ForeignKey(User, on_delete=models.CASCADE) #AUTOR DE POSTAGEM COM O ID
-
+    body = models.TextField() #Corpo do post da mensagem
+    created = models.DateTimeField(auto_now_add=True) #Adiciona data
+    updated = models.DateTimeField(auto_now=True) #atualiza a data automaticamente
